@@ -1,0 +1,23 @@
+name:                SonaattiMenu
+version:             0.1.0.0
+synopsis:            Parse Sonaatti restaurants RSS feed.
+description:         Please see README.md
+homepage:            http://github.com/keveri/SonaattiMenu#readme
+license:             BSD3
+license-file:        LICENSE
+author:              Matias Keveri
+category:            Web
+build-type:          Simple
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     SonaattiMenu
+  default-language:    Haskell2010
+  build-depends:
+    base >= 4.7 && < 5,
+    lens >= 4.12,
+    xml  >= 1.3,
+    text >= 1.2,
+    wreq >= 0.4,
+    string-conversions >= 0.4
