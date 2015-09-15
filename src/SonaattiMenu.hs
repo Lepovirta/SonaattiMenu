@@ -25,7 +25,7 @@ cleanMenu (Nothing,_)         = Nothing
 cleanMenu (_,Nothing)         = Nothing
 cleanMenu ((Just t),(Just d)) =
     let cleanT x = T.pack $ takeWhile (/= ' ') $ strContent x
-        cleanD y = T.pack $ filter (/= '\t') $ strContent y
+        cleanD y = T.pack $ filter (not . flip elem ['\t', '\n']) $ strContent y
     in  Just (cleanT t, cleanD d)
 
 -- Parse menu from an XML element.
